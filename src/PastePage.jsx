@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NotFound from "./NotFound";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://65.0.72.127:8001";
+const API_BASE = import.meta.env.DEV
+    ? "http://65.0.72.127:8001"
+    : "";
+
 
 export default function PastePage() {
     const { slug } = useParams();
@@ -12,7 +15,7 @@ export default function PastePage() {
 
     useEffect(() => {
 
-        let isMounted = true; 
+        let isMounted = true;
 
         const fetchPaste = async () => {
             try {

@@ -1,4 +1,6 @@
-const API_BASE = import.meta.env.VITE_API_BASE || "http://65.0.72.127:8001";
+const API_BASE = import.meta.env.DEV
+  ? "http://65.0.72.127:8001"
+  : "";
 
 export async function createPaste(data) {
   const res = await fetch(`${API_BASE}/api/pastes`, {
