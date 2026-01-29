@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { createPaste } from "../api";
 export default function CreatePaste() {
   const [content, setContent] = useState("");
   const [ttl, setTtl] = useState("");
